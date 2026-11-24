@@ -1,3 +1,14 @@
+variable "network_interface" {
+  description = "A mapping of Network Interface names to their properties."
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    ip_config_name      = string
+    private_ip_address_allocation = string
+  }))
+}
+
 variable "name" {
   description = "The name of the Network Interface. Must be between 1 and 80 characters."
   type        = string
